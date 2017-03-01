@@ -1,0 +1,6 @@
+framework module Pods_BIRTHTests {
+  umbrella header "Pods-BIRTHTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

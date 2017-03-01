@@ -7,6 +7,14 @@
 //
 
 import UIKit
+import Alamofire
+import Realm
+import SwiftyJSON
+import FBSDKCoreKit
+import FBSDKShareKit
+import FBSDKLoginKit
+import FacebookCore
+import FacebookLogin
 
 class ViewController: UIViewController {
 
@@ -22,4 +30,3 @@ class ViewController: UIViewController {
 
 
 }
-
