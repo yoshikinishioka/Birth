@@ -16,6 +16,7 @@ import FBSDKLoginKit
 import FacebookCore
 import FacebookLogin
 
+
 class LoginViewController: UIViewController {
     
     var dict : [String : Any] = [:]
@@ -41,6 +42,21 @@ class LoginViewController: UIViewController {
         let loggedIn = AccessToken.current != nil
         return loggedIn
     }
+    
+    func getUserInfo() {
+        var dict : [String : Any] = [:]
+        
+        AppManager.manager.user
+        
+        let parameters = [
+            "fb_user_id": 0,
+            "birthday": Date(),
+            "name": "yoshiki"
+        ] as [String : Any]
+        request("https://gentle-everglades-56388.herokuapp.com/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
+        
+    }
+    
     
     @IBAction func login(_ sender: UIButton) {
         
