@@ -22,12 +22,6 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         self.selectedIndex = 0
-        
-        for item in tabBar.items! {
-            if (item.tag != self.selectedIndex ) {
-                item.badgeValue = "0"
-            }
-        }
 
         // Do any additional setup after loading the view.
     }
