@@ -11,8 +11,8 @@ import Alamofire
 import RealmSwift
 import SwiftyJSON
 import FBSDKCoreKit
-import FBSDKShareKit
 import FBSDKLoginKit
+import FBSDKShareKit
 import FacebookCore
 import FacebookLogin
 
@@ -46,8 +46,6 @@ class LoginViewController: UIViewController {
     func getUserInfo() {
         var dict : [String : Any] = [:]
         
-        AppManager.manager.user
-        
         let parameters = [
             "fb_user_id": 0,
             "birthday": Date(),
@@ -55,6 +53,7 @@ class LoginViewController: UIViewController {
         ] as [String : Any]
         request("https://gentle-everglades-56388.herokuapp.com/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
         
+        // AppManager.manager.user =
     }
     
     
@@ -82,7 +81,8 @@ class LoginViewController: UIViewController {
 //                    "name": dict2["name"]
 //                ]
 //                Alamofire.request(.POST, "https://gentle-everglades-56388.herokuapp.com/register_friends", parameters2: parameters)
-                self.friendsList()
+//                self.friendsList()
+                
             case let .failed(error):
                 print("error:\(error)")
             case .cancelled:
@@ -105,36 +105,36 @@ class LoginViewController: UIViewController {
             })
         }
         
-        ["AaJlsuvWJoVGM9Z1YauSu9TNycKtD-E2gMQz2lRXsQJNBLL7hsO9Imyad6Ej67LPyA0TpEeoi7V8JxSgGt3_VQL-3gSiAAL7jChEWTBpqe-ERg",
-         "AaJ8xVX59gLZAoKsCmgA7Hv3gS_uEvZc8r1sVPMi3fztKpRo4dRI0Yv9w_3tS2yS2bnh4t1oQSvqcKvfEYBmy7LRGWNkB2nlEAum_o4sRv5MHQ",
-         "AaLrlO0Adp_6iPv_rOkVX1DiUMVrcfIg0ZkNWu_irbhc0hS9vnMR6VZ4-XswobhJVJ6mD_9lSILn6JB1nHcXnl95FUtoSclpiDPB-UYauJnqXQ",
-         "AaKwjg6OPeauk8_Up3ruyihYHcKIEiS6Dka-GDwBOphBmNB4HNNetyP6L86cxkbHDVQ3Wc43XJp-2k5uRmAsNpfu9FLnEJftq0GGgtT_RBm-EA",
-         "AaJqaDf2pPJvy2r-Q3kin3z6661Rfias9RClr8C4ArX3oigBA7U-MkvOZrVXGJXHM8Vvl5qqRrOs9jUARkY78EBGGk4ixZE4CF_FtGNPIqMkdw"].forEach { id in
-            FBSDKGraphRequest(graphPath: id, parameters: ["fields": "id, name, birthday, age_range, first_name, last_name, link, gender, locale, timezone, updated_time, verified"]).start(completionHandler: { (connection, result, error) -> Void in
-                if error == nil {
-                    self.dict = result as! [String : Any]
-                    print(result!)
-                    print(self.dict)
-                } else {
-                    print("error me", error!)
-                }
-            })
-        }
+//        ["AaJlsuvWJoVGM9Z1YauSu9TNycKtD-E2gMQz2lRXsQJNBLL7hsO9Imyad6Ej67LPyA0TpEeoi7V8JxSgGt3_VQL-3gSiAAL7jChEWTBpqe-ERg",
+//         "AaJ8xVX59gLZAoKsCmgA7Hv3gS_uEvZc8r1sVPMi3fztKpRo4dRI0Yv9w_3tS2yS2bnh4t1oQSvqcKvfEYBmy7LRGWNkB2nlEAum_o4sRv5MHQ",
+//         "AaLrlO0Adp_6iPv_rOkVX1DiUMVrcfIg0ZkNWu_irbhc0hS9vnMR6VZ4-XswobhJVJ6mD_9lSILn6JB1nHcXnl95FUtoSclpiDPB-UYauJnqXQ",
+//         "AaKwjg6OPeauk8_Up3ruyihYHcKIEiS6Dka-GDwBOphBmNB4HNNetyP6L86cxkbHDVQ3Wc43XJp-2k5uRmAsNpfu9FLnEJftq0GGgtT_RBm-EA",
+//         "AaJqaDf2pPJvy2r-Q3kin3z6661Rfias9RClr8C4ArX3oigBA7U-MkvOZrVXGJXHM8Vvl5qqRrOs9jUARkY78EBGGk4ixZE4CF_FtGNPIqMkdw"].forEach { id in
+//            FBSDKGraphRequest(graphPath: id, parameters: ["fields": "id, name, birthday, age_range, first_name, last_name, link, gender, locale, timezone, updated_time, verified"]).start(completionHandler: { (connection, result, error) -> Void in
+//                if error == nil {
+//                    self.dict = result as! [String : Any]
+//                    print(result!)
+//                    print(self.dict)
+//                } else {
+//                    print("error me", error!)
+//                }
+//            })
+//        }
     }
+//    
+//    func friendsList() {
+//        FBSDKGraphRequest(graphPath: "me/taggable_friends", parameters: ["fields": "id,name"]).start( completionHandler: { (connection, result, error) -> Void in
+//            
+//            if ((error) != nil)
+//            {
+//                // Process error
+//                print("Error: \(error)")
+//                return
+//            } else {
+//                print(result)
+//                print(JSON(result!)["data"].array ?? [])
+//            }
     
-    func friendsList() {
-        FBSDKGraphRequest(graphPath: "me/taggable_friends", parameters: ["fields": "id,name"]).start( completionHandler: { (connection, result, error) -> Void in
-            
-            if ((error) != nil)
-            {
-                // Process error
-                print("Error: \(error)")
-                return
-            } else {
-                print(result)
-                print(JSON(result!)["data"].array ?? [])
-            }
-            
             
 //            let summary = result.valueForKey("summary") as! NSDictionary
 //            let counts = summary.valueForKey("total_count") as! NSNumber
@@ -162,8 +162,8 @@ class LoginViewController: UIViewController {
 //                    }
 //                }       
 //            })
-        })
-    }
+//        })
+//    }
 
     /*
     // MARK: - Navigation

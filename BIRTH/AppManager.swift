@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import Alamofire
+import RealmSwift
+import SwiftyJSON
+import FacebookCore
+import FacebookLogin
 
 class AppManager {
     static let manager = AppManager()
     var user: User!
+    var message: Message!
 }

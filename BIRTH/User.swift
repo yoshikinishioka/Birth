@@ -7,6 +7,11 @@
 //
 
 import Foundation
+import Alamofire
+import RealmSwift
+import SwiftyJSON
+import FacebookCore
+import FacebookLogin
 
 class User {
     var fb_user_id: String!

@@ -10,9 +10,6 @@ import UIKit
 import Alamofire
 import RealmSwift
 import SwiftyJSON
-import FBSDKCoreKit
-import FBSDKShareKit
-import FBSDKLoginKit
 import FacebookCore
 import FacebookLogin
 

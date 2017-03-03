@@ -24,6 +24,7 @@
 		5D7F8D951E64A0C8009E33E2 /* RecieveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7F8D941E64A0C8009E33E2 /* RecieveViewController.swift */; };
 		5D7F8D971E64A101009E33E2 /* RecentlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7F8D961E64A101009E33E2 /* RecentlyViewController.swift */; };
 		5D7F8D991E64A113009E33E2 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7F8D981E64A113009E33E2 /* MessageViewController.swift */; };
+		5DCB4DDE1E693ABE0097EF14 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCB4DDD1E693ABE0097EF14 /* Message.swift */; };
 		7563A30F2DE923163A5D0CE8 /* Pods_BIRTH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D71E057E568264DDF9BD13 /* Pods_BIRTH.framework */; };
 		A0952CB47C523974622EB00E /* Pods_BIRTHTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E07C7271AA6A235BC903DF /* Pods_BIRTHTests.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,7 @@
 		5D7F8D941E64A0C8009E33E2 /* RecieveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecieveViewController.swift; sourceTree = "<group>"; };
 		5D7F8D961E64A101009E33E2 /* RecentlyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentlyViewController.swift; sourceTree = "<group>"; };
 		5D7F8D981E64A113009E33E2 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		5DCB4DDD1E693ABE0097EF14 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		5E02C8F9FA0F58AE0CB9186F /* Pods-BIRTHUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIRTHUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BIRTHUITests/Pods-BIRTHUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		90F54847B10602E120B54785 /* Pods-BIRTHTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIRTHTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BIRTHTests/Pods-BIRTHTests.release.xcconfig"; sourceTree = "<group>"; };
 		B24112875447BE0AEEED1756 /* Pods-BIRTHTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIRTHTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BIRTHTests/Pods-BIRTHTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +159,9 @@
 			children = (
 				5D7F8D8F1E648035009E33E2 /* photo */,
 				5D7F8D5A1E634293009E33E2 /* AppDelegate.swift */,
+				5DCB4DDD1E693ABE0097EF14 /* Message.swift */,
+				5D1D93591E6834D000C1DF78 /* User.swift */,
+				5D1D93571E68345F00C1DF78 /* AppManager.swift */,
 				5D7F8D8B1E64682E009E33E2 /* LoginViewController.swift */,
 				5D7F8D891E634623009E33E2 /* TabBarController.swift */,
 				5D7F8D8D1E647A1B009E33E2 /* UserViewController.swift */,
@@ -168,8 +173,6 @@
 				5D7F8D631E634293009E33E2 /* LaunchScreen.storyboard */,
 				5D7F8D661E634293009E33E2 /* Info.plist */,
 				5D7F8D611E634293009E33E2 /* Assets.xcassets */,
-				5D1D93571E68345F00C1DF78 /* AppManager.swift */,
-				5D1D93591E6834D000C1DF78 /* User.swift */,
 			);
 			path = BIRTH;
 			sourceTree = "<group>";
@@ -181,7 +184,7 @@
 				5D7F8D711E634294009E33E2 /* Info.plist */,
 			);
 			path = BIRTHTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		5D7F8D791E634294009E33E2 /* BIRTHUITests */ = {
 			isa = PBXGroup;
@@ -488,6 +491,7 @@
 				5D7F8D951E64A0C8009E33E2 /* RecieveViewController.swift in Sources */,
 				5D7F8D8A1E634623009E33E2 /* TabBarController.swift in Sources */,
 				5D7F8D931E64A0B7009E33E2 /* SendViewController.swift in Sources */,
+				5DCB4DDE1E693ABE0097EF14 /* Message.swift in Sources */,
 				5D1D93581E68345F00C1DF78 /* AppManager.swift in Sources */,
 				5D7F8D5B1E634293009E33E2 /* AppDelegate.swift in Sources */,
 				5D1D935A1E6834D000C1DF78 /* User.swift in Sources */,
