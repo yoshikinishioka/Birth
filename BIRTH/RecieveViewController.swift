@@ -12,10 +12,13 @@ import RealmSwift
 import SwiftyJSON
 import FacebookCore
 import FacebookLogin
+import AVFoundation
 
 class RecieveViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var table: UITableView!
+    
+    var audioPlayer: AVAudioPlayer!
     
 //    var receiveNameArray = [String]()
     
@@ -38,7 +41,11 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
 //        receiveNameArray = ["facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得"]
         
         table.delegate = self
-
+        
+        let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Happy_Birthday_To_You", ofType: "mp3")!)
+        audioPlayer = try? AVAudioPlayer(contentsOf: audioPath as URL)
+        audioPlayer.play()
+        
         // Do any additional setup after loading the view.
     }
     

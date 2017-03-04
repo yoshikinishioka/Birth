@@ -84,7 +84,7 @@
                             </label>
                         </subviews>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Recently" id="yD9-W9-483"/>
+                    <tabBarItem key="tabBarItem" title="Recently" image="recently-iloveimg-resized.png" selectedImage="recently-iloveimg-resized.png" id="yD9-W9-483"/>
                     <navigationItem key="navigationItem" id="Qaa-hr-Wod"/>
                     <connections>
                         <outlet property="table" destination="PFi-q1-tPa" id="bxr-af-ujx"/>
@@ -92,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="677.60000000000002" y="-272.11394302848578"/>
+            <point key="canvasLocation" x="566" y="-144"/>
         </scene>
         <!--Message-->
         <scene sceneID="N39-B2-J0Q">
@@ -140,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PGZ-c0-jlH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2584.8000000000002" y="-194.75262368815595"/>
+            <point key="canvasLocation" x="2390" y="-144"/>
         </scene>
         <!--Send-->
         <scene sceneID="S4Y-6j-b58">
@@ -208,58 +208,14 @@
                             </label>
                         </subviews>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Send" image="success.png" id="jnU-kZ-SXe"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Send" image="send-iloveimg-resized.png" selectedImage="send-iloveimg-resized.png" id="jnU-kZ-SXe"/>
                     <connections>
                         <outlet property="table" destination="0Cd-91-ZM0" id="wx5-tU-tKG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1it-s9-aXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="565.60000000000002" y="-960.2698650674663"/>
-        </scene>
-        <!--User-->
-        <scene sceneID="PdJ-lK-E5g">
-            <objects>
-                <viewController id="6mD-4Z-1uX" customClass="UserViewController" customModule="BIRTH" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QZK-W9-QA5"/>
-                        <viewControllerLayoutGuide type="bottom" id="vVK-aZ-zIG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="N6U-wW-bSJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yU7-eD-2Ac">
-                                <rect key="frame" x="98" y="466" width="178" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.65200374380000004" green="0.68226545750000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="fbLogout" destination="6mD-4Z-1uX" eventType="touchUpInside" id="vbO-c4-tdS"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzP-os-YOC">
-                                <rect key="frame" x="211" y="208" width="90" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login as" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSr-zm-w8z">
-                                <rect key="frame" x="98" y="228" width="79" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" tag="3" title="User" image="info.png" id="Rny-rj-E2J"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DAn-lt-l6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-801" y="252"/>
+            <point key="canvasLocation" x="566" y="-913"/>
         </scene>
         <!--Receive-->
         <scene sceneID="d0V-3r-VcD">
@@ -327,14 +283,14 @@
                             </label>
                         </subviews>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Receive" image="info.png" id="vW3-v1-zMr"/>
+                    <tabBarItem key="tabBarItem" title="Receive" image="receive-iloveimg-resized.png" selectedImage="receive-iloveimg-resized.png" id="vW3-v1-zMr"/>
                     <connections>
                         <outlet property="table" destination="VdU-mX-q2C" id="AXQ-3L-3Z6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1D-LE-x63" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40.799999999999997" y="250.52473763118442"/>
+            <point key="canvasLocation" x="-612" y="161"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="o2H-ze-geQ">
@@ -380,10 +336,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="6mD-4Z-1uX" kind="relationship" relationship="viewControllers" id="kgI-7r-f6U"/>
-                        <segue destination="sK6-6f-sum" kind="relationship" relationship="viewControllers" id="38F-fX-MPY"/>
                         <segue destination="2nE-jq-dpb" kind="relationship" relationship="viewControllers" id="rnY-mC-lUn"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="nkn-Dn-a22"/>
+                        <segue destination="sK6-6f-sum" kind="relationship" relationship="viewControllers" id="38F-fX-MPY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgc-ox-Qji" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -406,12 +361,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x7B-GZ-hWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1678" y="-193"/>
+            <point key="canvasLocation" x="1446" y="-144"/>
         </scene>
     </scenes>
     <resources>
         <image name="facebook_login.png" width="399" height="83"/>
-        <image name="info.png" width="28" height="28"/>
-        <image name="success.png" width="28" height="28"/>
+        <image name="receive-iloveimg-resized.png" width="30" height="30"/>
+        <image name="recently-iloveimg-resized.png" width="30" height="30"/>
+        <image name="send-iloveimg-resized.png" width="30" height="30"/>
     </resources>
 </document>

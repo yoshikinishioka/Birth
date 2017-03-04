@@ -27,6 +27,10 @@
 		5DCB4DDE1E693ABE0097EF14 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCB4DDD1E693ABE0097EF14 /* Message.swift */; };
 		5DCB4DE01E695E6F0097EF14 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCB4DDF1E695E6F0097EF14 /* CustomTableViewCell.swift */; };
 		5DCB4DE21E6AF7E50097EF14 /* PlaceHolderedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCB4DE11E6AF7E50097EF14 /* PlaceHolderedTextView.swift */; };
+		5DCB4DEA1E6B10B40097EF14 /* receive-iloveimg-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB4DE91E6B10B40097EF14 /* receive-iloveimg-resized.png */; };
+		5DCB4DEC1E6B10BF0097EF14 /* recently-iloveimg-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB4DEB1E6B10BF0097EF14 /* recently-iloveimg-resized.png */; };
+		5DCB4DEE1E6B10C30097EF14 /* send-iloveimg-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB4DED1E6B10C30097EF14 /* send-iloveimg-resized.png */; };
+		5DCB4DF11E6B12360097EF14 /* Happy_Birthday_To_You.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB4DF01E6B12360097EF14 /* Happy_Birthday_To_You.mp3 */; };
 		7563A30F2DE923163A5D0CE8 /* Pods_BIRTH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D71E057E568264DDF9BD13 /* Pods_BIRTH.framework */; };
 		A0952CB47C523974622EB00E /* Pods_BIRTHTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E07C7271AA6A235BC903DF /* Pods_BIRTHTests.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +82,10 @@
 		5DCB4DDD1E693ABE0097EF14 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		5DCB4DDF1E695E6F0097EF14 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		5DCB4DE11E6AF7E50097EF14 /* PlaceHolderedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceHolderedTextView.swift; sourceTree = "<group>"; };
+		5DCB4DE91E6B10B40097EF14 /* receive-iloveimg-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "receive-iloveimg-resized.png"; sourceTree = "<group>"; };
+		5DCB4DEB1E6B10BF0097EF14 /* recently-iloveimg-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recently-iloveimg-resized.png"; sourceTree = "<group>"; };
+		5DCB4DED1E6B10C30097EF14 /* send-iloveimg-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send-iloveimg-resized.png"; sourceTree = "<group>"; };
+		5DCB4DF01E6B12360097EF14 /* Happy_Birthday_To_You.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Happy_Birthday_To_You.mp3; sourceTree = "<group>"; };
 		5E02C8F9FA0F58AE0CB9186F /* Pods-BIRTHUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIRTHUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BIRTHUITests/Pods-BIRTHUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		90F54847B10602E120B54785 /* Pods-BIRTHTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIRTHTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BIRTHTests/Pods-BIRTHTests.release.xcconfig"; sourceTree = "<group>"; };
 		B24112875447BE0AEEED1756 /* Pods-BIRTHTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIRTHTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BIRTHTests/Pods-BIRTHTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +171,7 @@
 			children = (
 				5D7F8D8F1E648035009E33E2 /* photo */,
 				5D7F8D5A1E634293009E33E2 /* AppDelegate.swift */,
+				5DCB4DF01E6B12360097EF14 /* Happy_Birthday_To_You.mp3 */,
 				5DCB4DDD1E693ABE0097EF14 /* Message.swift */,
 				5D1D93591E6834D000C1DF78 /* User.swift */,
 				5DCB4DDF1E695E6F0097EF14 /* CustomTableViewCell.swift */,
@@ -204,6 +213,9 @@
 		5D7F8D8F1E648035009E33E2 /* photo */ = {
 			isa = PBXGroup;
 			children = (
+				5DCB4DEB1E6B10BF0097EF14 /* recently-iloveimg-resized.png */,
+				5DCB4DE91E6B10B40097EF14 /* receive-iloveimg-resized.png */,
+				5DCB4DED1E6B10C30097EF14 /* send-iloveimg-resized.png */,
 				5D7F8D901E64804A009E33E2 /* facebook_login.png */,
 			);
 			name = photo;
@@ -327,7 +339,11 @@
 			files = (
 				5D7F8D651E634293009E33E2 /* LaunchScreen.storyboard in Resources */,
 				5D7F8D621E634293009E33E2 /* Assets.xcassets in Resources */,
+				5DCB4DEC1E6B10BF0097EF14 /* recently-iloveimg-resized.png in Resources */,
+				5DCB4DF11E6B12360097EF14 /* Happy_Birthday_To_You.mp3 in Resources */,
 				5D7F8D601E634293009E33E2 /* Main.storyboard in Resources */,
+				5DCB4DEE1E6B10C30097EF14 /* send-iloveimg-resized.png in Resources */,
+				5DCB4DEA1E6B10B40097EF14 /* receive-iloveimg-resized.png in Resources */,
 				5D7F8D911E64804A009E33E2 /* facebook_login.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
