@@ -17,7 +17,11 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet var table: UITableView!
     
-    var receiveNameArray = [String]()
+//    var receiveNameArray = [String]()
+    
+    let name = ["cat1", "cat2", "dog1", "dog2", "cat3", "catrr", "vatrr"]
+    
+    let content = ["ネコ1", "ネコ2", "イヌ1", "イヌ2", "fasdfas", "dfa", "dsfas"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +35,7 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
         
         table.dataSource = self
         
-        receiveNameArray = ["facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得"]
+//        receiveNameArray = ["facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得"]
         
         table.delegate = self
 
@@ -61,19 +65,27 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return receiveNameArray.count
+        return name.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Receive")
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Receive")
+//        
+//       cell?.textLabel?.text = receiveNameArray[indexPath.row]
+//        
+//      return UITableViewCell()
         
-        cell?.textLabel?.text = receiveNameArray[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Receive") as! CustomTableViewCell
         
-        return cell!
+        cell.nameLabel.text = name[indexPath.row]
+        cell.contentLabel.text = content[indexPath.row]
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        NSLog("%@が選ばれました", receiveNameArray[indexPath.row])
+        //NSLog("%@が選ばれました", receiveNameArray[indexPath.row])
+
     }
     
 

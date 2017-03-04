@@ -17,14 +17,18 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet var table: UITableView!
     
-    var sendNameArray = [String]()
+    let name = ["cat1", "cat2", "dog1", "dog2", "cat3", "catrr", "vatrr"]
+    
+    let content = ["ネコ1", "ネコ2", "イヌ1", "イヌ2", "fasdfas", "dfa", "dsfas"]
+    
+//    var sendNameArray = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         table.dataSource = self
         
-        sendNameArray = ["facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得"]
+       // sendNameArray = ["facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得"]
         
         table.delegate = self
 
@@ -37,19 +41,27 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sendNameArray.count
+        //return sendNameArray.count
+        return name.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Send")
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Send")
+//        
+//        cell?.textLabel?.text = sendNameArray[indexPath.row]
+//        
+//        return cell!
         
-        cell?.textLabel?.text = sendNameArray[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Send") as! CustomTableViewCell
         
-        return cell!
+        cell.nameLabel.text = name[indexPath.row]
+        cell.contentLabel.text = content[indexPath.row]
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        NSLog("%@が選ばれました", sendNameArray[indexPath.row])
+        //NSLog("%@が選ばれました", sendNameArray[indexPath.row])
     }
 
     /*
