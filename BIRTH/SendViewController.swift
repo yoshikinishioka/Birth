@@ -17,9 +17,9 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet var table: UITableView!
     
-    let name = ["cat1", "cat2", "dog1", "dog2", "cat3", "catrr", "vatrr"]
+    let name = ["はるふ", "つよっぺ", "ゆっこ", "みく", "さくちゃん", "ゆうくん", "ありさ"]
     
-    let content = ["ネコ1", "ネコ2", "イヌ1", "イヌ2", "fasdfas", "dfa", "dsfas"]
+    let content = ["はるふくんHappy Birthday!!", "つよっぺHappy Birthday!!", "ゆっこちゃんHappy Birthday!!", "みくHappy Birthday!!", "さくちゃんHappy Birthday!!", "ゆうくんHappy Birthday!!", "ありさHappy Birthday!!"]
     
 //    var sendNameArray = [String]()
 

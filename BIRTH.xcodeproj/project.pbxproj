@@ -170,15 +170,15 @@
 				5D7F8D8B1E64682E009E33E2 /* LoginViewController.swift */,
 				5D7F8D891E634623009E33E2 /* TabBarController.swift */,
 				5D7F8D8D1E647A1B009E33E2 /* UserViewController.swift */,
-				5D7F8D961E64A101009E33E2 /* RecentlyViewController.swift */,
 				5D7F8D981E64A113009E33E2 /* MessageViewController.swift */,
+				5DCB4DE11E6AF7E50097EF14 /* PlaceHolderedTextView.swift */,
+				5D7F8D961E64A101009E33E2 /* RecentlyViewController.swift */,
 				5D7F8D921E64A0B7009E33E2 /* SendViewController.swift */,
 				5D7F8D941E64A0C8009E33E2 /* RecieveViewController.swift */,
 				5D7F8D5E1E634293009E33E2 /* Main.storyboard */,
 				5D7F8D631E634293009E33E2 /* LaunchScreen.storyboard */,
 				5D7F8D661E634293009E33E2 /* Info.plist */,
 				5D7F8D611E634293009E33E2 /* Assets.xcassets */,
-				5DCB4DE11E6AF7E50097EF14 /* PlaceHolderedTextView.swift */,
 			);
 			path = BIRTH;
 			sourceTree = "<group>";

@@ -19,9 +19,9 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
     
 //    var receiveNameArray = [String]()
     
-    let name = ["cat1", "cat2", "dog1", "dog2", "cat3", "catrr", "vatrr"]
+    let name = ["ジャスティン", "きゃあ。", "ばなな", "けいちゃん", "べいべー", "パーカー", "みあきち"]
     
-    let content = ["ネコ1", "ネコ2", "イヌ1", "イヌ2", "fasdfas", "dfa", "dsfas"]
+    let content = ["ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

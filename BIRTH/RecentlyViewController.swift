@@ -17,14 +17,18 @@ class RecentlyViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet var table: UITableView!
     
-    var recentlyNameArray = [String]()
+    let name = ["はるふ", "さくちゃん", "あかさん", "ゆうくん", "りょうさん", "まるさん", "小森さん"]
+    
+    let birthday = ["2/15", "2/15", "2/15", "2/15", "2/15", "2/15", "2/15"]
+    
+    //var recentlyNameArray = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         table.dataSource = self
         
-        recentlyNameArray = ["facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得"]
+        //recentlyNameArray = ["facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得"]
         
         table.delegate = self
         
@@ -37,19 +41,25 @@ class RecentlyViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recentlyNameArray.count
+        return name.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Recently")
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Recently")
+//        
+//        cell?.textLabel?.text = recentlyNameArray[indexPath.row]
+//        
+//        return cell!
         
-        cell?.textLabel?.text = recentlyNameArray[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Recently") as! CustomTableViewCell
+        cell.nameLabel.text = name[indexPath.row]
+        cell.birthdayLabel.text = birthday[indexPath.row]
         
-        return cell!
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        NSLog("%@が選ばれました", recentlyNameArray[indexPath.row])
+        //NSLog("%@が選ばれました", recentlyNameArray[indexPath.row])
     }
     
 
