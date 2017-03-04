@@ -20,51 +20,43 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var audioPlayer: AVAudioPlayer!
     
-//    var receiveNameArray = [String]()
+    var nameArray: [String] = []
+    var contentArray: [String] = []
     
-    let name = ["ジャスティン", "きゃあ。", "ばなな", "けいちゃん", "べいべー", "パーカー", "みあきち"]
-    
-    let content = ["ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!"]
+//    let name = ["ジャスティン", "きゃあ。", "ばなな", "けいちゃん", "べいべー", "パーカー", "みあきち"]
+//    
+//    let content = ["ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
- 
-// alamofireのサンプル練習コード
-//        title = "Receive"
-//        table.frame = view.frame
-//        view.addSubview(table)
-//        
-//        getReceives()
+        
+        getReceives()
         
         table.dataSource = self
         
-//        receiveNameArray = ["facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得"]
-        
         table.delegate = self
         
-        let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Happy_Birthday_To_You", ofType: "mp3")!)
-        audioPlayer = try? AVAudioPlayer(contentsOf: audioPath as URL)
-        audioPlayer.play()
+//        let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Happy_Birthday_To_You", ofType: "mp3")!)
+//        audioPlayer = try? AVAudioPlayer(contentsOf: audioPath as URL)
+//        audioPlayer.play()
         
         // Do any additional setup after loading the view.
     }
     
     
-//   // alamofireのサンプル練習コード
-//    func getReceives() {
-//        Alamofire.request("https://qiita.com/api/v2/items")
-//            .responseJSON { response in
-//                guard let object = response.result.value else {
-//                    return
-//                }
-//                
-//                let json = JSON(object)
-//                json.forEach { (_, json) in
-//                    print(json["title"].string)
-//                }
-//                
-//        }
-//    }
+    func getReceives() {
+        Alamofire.request("https://gentle-everglades-56388.herokuapp.com/messages/receive/1")
+            .responseJSON { response in
+                guard let object = response.result.value else {
+                    return
+                }
+                let json = JSON(object)
+                json.forEach { (_, json) in
+                    self.nameArray.append(json["name"].string!)
+                    self.contentArray.append(json["content"].string!)
+                }
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -72,26 +64,20 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return name.count
+        return nameArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Receive")
-//        
-//       cell?.textLabel?.text = receiveNameArray[indexPath.row]
-//        
-//      return UITableViewCell()
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Receive") as! CustomTableViewCell
         
-        cell.nameLabel.text = name[indexPath.row]
-        cell.contentLabel.text = content[indexPath.row]
+        cell.nameLabel.text = nameArray[indexPath.row]
+        cell.contentLabel.text = contentArray[indexPath.row]
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //NSLog("%@が選ばれました", receiveNameArray[indexPath.row])
 
     }
     

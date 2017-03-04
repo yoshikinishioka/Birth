@@ -17,22 +17,36 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet var table: UITableView!
     
-    let name = ["はるふ", "つよっぺ", "ゆっこ", "みく", "さくちゃん", "ゆうくん", "ありさ"]
+    var nameArray: [String] = []
+    var contentArray: [String] = []
     
-    let content = ["はるふくんHappy Birthday!!", "つよっぺHappy Birthday!!", "ゆっこちゃんHappy Birthday!!", "みくHappy Birthday!!", "さくちゃんHappy Birthday!!", "ゆうくんHappy Birthday!!", "ありさHappy Birthday!!"]
-    
-//    var sendNameArray = [String]()
+//    let name = ["はるふ", "つよっぺ", "ゆっこ", "みく", "さくちゃん", "ゆうくん", "ありさ"]
+//    
+//    let content = ["はるふくんHappy Birthday!!", "つよっぺHappy Birthday!!", "ゆっこちゃんHappy Birthday!!", "みくHappy Birthday!!", "さくちゃんHappy Birthday!!", "ゆうくんHappy Birthday!!", "ありさHappy Birthday!!"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         table.dataSource = self
         
-       // sendNameArray = ["facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得"]
-        
         table.delegate = self
 
         // Do any additional setup after loading the view.
+    }
+    
+    func getSends() {
+        Alamofire.request("https://gentle-everglades-56388.herokuapp.com/messages/send/0")
+            .responseJSON { response in
+                guard let object = response.result.value else {
+                    return
+                }
+                let json = JSON(object)
+                json.forEach { (_, json) in
+                    self.nameArray.append(json["name"].string!)
+                    self.contentArray.append(json["content"].string!)
+                }
+                
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,26 +56,20 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return sendNameArray.count
-        return name.count
+        return nameArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Send")
-//        
-//        cell?.textLabel?.text = sendNameArray[indexPath.row]
-//        
-//        return cell!
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Send") as! CustomTableViewCell
         
-        cell.nameLabel.text = name[indexPath.row]
-        cell.contentLabel.text = content[indexPath.row]
+        cell.nameLabel.text = nameArray[indexPath.row]
+        cell.contentLabel.text = contentArray[indexPath.row]
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //NSLog("%@が選ばれました", sendNameArray[indexPath.row])
     }
 
     /*

@@ -23,11 +23,6 @@ class TabBarController: UITabBarController {
         // Do any additional setup after loading the view.
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        print(self.selectedIndex)
-//    }
-    
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         item.badgeValue = nil
     }

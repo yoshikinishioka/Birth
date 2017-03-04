@@ -17,22 +17,35 @@ class RecentlyViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet var table: UITableView!
     
-    let name = ["はるふ", "さくちゃん", "あかさん", "ゆうくん", "りょうさん", "まるさん", "小森さん"]
+    var nameArray: [String] = []
+    var birthdayArray: [String] = []
     
-    let birthday = ["2/15", "2/15", "2/15", "2/15", "2/15", "2/15", "2/15"]
-    
-    //var recentlyNameArray = [String]()
+//    let name = ["はるふ", "さくちゃん", "あかさん", "ゆうくん", "りょうさん", "まるさん", "小森さん"]
+//    let birthday = ["2/15", "2/15", "2/15", "2/15", "2/15", "2/15", "2/15"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         table.dataSource = self
         
-        //recentlyNameArray = ["facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得", "facebookから友達の情報を取得"]
-        
         table.delegate = self
         
         // Do any additional setup after loading the view.
+    }
+    
+    func getReceives() {
+        Alamofire.request("https://gentle-everglades-56388.herokuapp.com/messages/friends/0")
+            .responseJSON { response in
+                guard let object = response.result.value else {
+                    return
+                }
+                let json = JSON(object)
+                json.forEach { (_, json) in
+                    self.nameArray.append(json["name"].string!)
+                    self.birthdayArray.append(json["birthday"].string!)
+                }
+                
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,25 +54,19 @@ class RecentlyViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return name.count
+        return nameArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Recently")
-//        
-//        cell?.textLabel?.text = recentlyNameArray[indexPath.row]
-//        
-//        return cell!
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Recently") as! CustomTableViewCell
-        cell.nameLabel.text = name[indexPath.row]
-        cell.birthdayLabel.text = birthday[indexPath.row]
+        cell.nameLabel.text = nameArray[indexPath.row]
+        cell.birthdayLabel.text = birthdayArray[indexPath.row]
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //NSLog("%@が選ばれました", recentlyNameArray[indexPath.row])
     }
     
 
