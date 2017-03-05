@@ -37,17 +37,16 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func getSends() {
-        request("https://gentle-everglades-56388.herokuapp.com/messages/send/0", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
+        request("https://gentle-everglades-56388.herokuapp.com/messages/send/1", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
             .responseJSON { response in
                 guard let object = response.result.value else {
                     return
                 }
                 let json = JSON(object)
                 json.forEach { (_, json) in
-//                    self.nameArray.append(json["name"].string!)
                     self.contentArray.append(json["content"].string!)
                 }
-                
+                print(self.contentArray)
         }
     }
 
@@ -66,7 +65,7 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "Send") as! CustomTableViewCell
         
         //cell.nameLabel.text = nameArray[indexPath.row]
-        cell.contentLabel.text = contentArray[indexPath.row]
+        cell.contentLabel.text = self.contentArray[indexPath.row]
         
         return cell
     }

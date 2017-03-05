@@ -68,11 +68,10 @@ class LoginViewController: UIViewController {
                 self.getFBUserData()
                 let parameters = [
                     "fb_user_id": self.dict["id"],
-                    "birthday": self.dict["birthday"],
+//                    "birthday": self.dict["birthday"],
                     "name": self.dict["name"]
                 ]
                 request("https://gentle-everglades-56388.herokuapp.com/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
-//                Alamofire.request(.POST, "https://gentle-everglades-56388.herokuapp.com/login", parameters: parameters)
                 
 //                self.getFBFriendsData()
 //                let parameters2 = [

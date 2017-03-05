@@ -46,6 +46,7 @@ class RecentlyViewController: UIViewController, UITableViewDataSource, UITableVi
                     self.nameArray.append(json["name"].string!)
                     self.birthdayArray.append(json["birthday"].string!)
                 }
+                print(self.nameArray, self.birthdayArray)
         }
     }
 
@@ -61,8 +62,8 @@ class RecentlyViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Recently") as! CustomTableViewCell
-        cell.nameLabel.text = nameArray[indexPath.row]
-        cell.birthdayLabel.text = birthdayArray[indexPath.row]
+        cell.nameLabel.text = self.nameArray[indexPath.row]
+        cell.birthdayLabel.text = self.birthdayArray[indexPath.row]
         
         return cell
     }
