@@ -36,9 +36,9 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
         
         table.delegate = self
         
-//        let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Happy_Birthday_To_You", ofType: "mp3")!)
-//        audioPlayer = try? AVAudioPlayer(contentsOf: audioPath as URL)
-//        audioPlayer.play()
+        let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Happy_Birthday_To_You", ofType: "mp3")!)
+        audioPlayer = try? AVAudioPlayer(contentsOf: audioPath as URL)
+        audioPlayer.play()
         
         // Do any additional setup after loading the view.
     }
@@ -52,7 +52,7 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
                 }
                 let json = JSON(object)
                 json.forEach { (_, json) in
-                    self.nameArray.append(json["name"].string!)
+//                    self.nameArray.append(json["name"].string!)
                     self.contentArray.append(json["content"].string!)
                 }
         }

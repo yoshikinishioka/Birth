@@ -27,6 +27,8 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getSends()
+        
         table.dataSource = self
         
         table.delegate = self
@@ -42,7 +44,7 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
                 let json = JSON(object)
                 json.forEach { (_, json) in
-                    self.nameArray.append(json["name"].string!)
+//                    self.nameArray.append(json["name"].string!)
                     self.contentArray.append(json["content"].string!)
                 }
                 

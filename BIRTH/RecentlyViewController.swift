@@ -30,11 +30,19 @@ class RecentlyViewController: UIViewController, UITableViewDataSource, UITableVi
         
         table.delegate = self
         
+        getRecentlies()
+        
         // Do any additional setup after loading the view.
     }
     
-    func getReceives() {
-        Alamofire.request("https://gentle-everglades-56388.herokuapp.com/messages/friends/0")
+    func getRecentlies() {
+        var dict : [String : Any] = [:]
+        
+        let parameters = [
+            "birthday": self.dict["birthday"],
+            "name": self.dict["name"]
+        ]
+        request("https://gentle-everglades-56388.herokuapp.com/users/0/friends", method: .get, parameters: Parameters, encoding: JSONEncoding.default, headers: nil)
             .responseJSON { response in
                 guard let object = response.result.value else {
                     return
