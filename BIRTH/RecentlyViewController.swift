@@ -36,13 +36,7 @@ class RecentlyViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func getRecentlies() {
-        var dict : [String : Any] = [:]
-        
-        let parameters = [
-            "birthday": self.dict["birthday"],
-            "name": self.dict["name"]
-        ]
-        request("https://gentle-everglades-56388.herokuapp.com/users/0/friends", method: .get, parameters: Parameters, encoding: JSONEncoding.default, headers: nil)
+        request("https://gentle-everglades-56388.herokuapp.com/users/0/friends", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
             .responseJSON { response in
                 guard let object = response.result.value else {
                     return
@@ -52,7 +46,6 @@ class RecentlyViewController: UIViewController, UITableViewDataSource, UITableVi
                     self.nameArray.append(json["name"].string!)
                     self.birthdayArray.append(json["birthday"].string!)
                 }
-                
         }
     }
 

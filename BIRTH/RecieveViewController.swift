@@ -20,7 +20,7 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var audioPlayer: AVAudioPlayer!
     
-    var nameArray: [String] = []
+    //var nameArray: [String] = []
     var contentArray: [String] = []
     
 //    let name = ["ジャスティン", "きゃあ。", "ばなな", "けいちゃん", "べいべー", "パーカー", "みあきち"]
@@ -36,23 +36,23 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
         
         table.delegate = self
         
-        let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Happy_Birthday_To_You", ofType: "mp3")!)
-        audioPlayer = try? AVAudioPlayer(contentsOf: audioPath as URL)
-        audioPlayer.play()
+        let audioPath = URL(fileURLWithPath: Bundle.main.path(forResource: "Happy_Birthday_To_You", ofType: "mp3")!)
+        audioPlayer = try? AVAudioPlayer(contentsOf: audioPath)
+        audioPlayer?.play()
         
         // Do any additional setup after loading the view.
     }
     
     
     func getReceives() {
-        Alamofire.request("https://gentle-everglades-56388.herokuapp.com/messages/receive/1")
+
+        request("https://gentle-everglades-56388.herokuapp.com/messages/receive/1", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
             .responseJSON { response in
                 guard let object = response.result.value else {
                     return
                 }
                 let json = JSON(object)
                 json.forEach { (_, json) in
-//                    self.nameArray.append(json["name"].string!)
                     self.contentArray.append(json["content"].string!)
                 }
         }
@@ -64,14 +64,14 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nameArray.count
+        return contentArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Receive") as! CustomTableViewCell
         
-        cell.nameLabel.text = nameArray[indexPath.row]
+        //cell.nameLabel.text = nameArray[indexPath.row]
         cell.contentLabel.text = contentArray[indexPath.row]
         
         return cell

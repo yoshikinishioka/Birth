@@ -17,7 +17,7 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet var table: UITableView!
     
-    var nameArray: [String] = []
+//    var senderArray: [String] = []
     var contentArray: [String] = []
     
 //    let name = ["はるふ", "つよっぺ", "ゆっこ", "みく", "さくちゃん", "ゆうくん", "ありさ"]
@@ -37,7 +37,7 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func getSends() {
-        Alamofire.request("https://gentle-everglades-56388.herokuapp.com/messages/send/0")
+        request("https://gentle-everglades-56388.herokuapp.com/messages/send/0", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
             .responseJSON { response in
                 guard let object = response.result.value else {
                     return
@@ -58,14 +58,14 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return sendNameArray.count
-        return nameArray.count
+        return contentArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Send") as! CustomTableViewCell
         
-        cell.nameLabel.text = nameArray[indexPath.row]
+        //cell.nameLabel.text = nameArray[indexPath.row]
         cell.contentLabel.text = contentArray[indexPath.row]
         
         return cell
