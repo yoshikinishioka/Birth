@@ -53,7 +53,7 @@ class LoginViewController: UIViewController {
         ] as [String : Any]
         request("https://gentle-everglades-56388.herokuapp.com/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
         
-        // AppManager.manager.user = 
+        //AppManager.manager.user = dict
     }
     
     

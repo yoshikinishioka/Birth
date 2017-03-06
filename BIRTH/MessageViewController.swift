@@ -36,9 +36,9 @@ class MessageViewController: UIViewController, UITextFieldDelegate {
         var dict : [String : Any] = [:]
         
         let parameters = [
-            "content": "hhh",
-            "sender_id": 0,
-            "receiver_id": 1
+            "content": self.contentField,
+            "sender_id": 1,
+            "receiver_id": 0
             ] as [String : Any]
         
         request("https://gentle-everglades-56388.herokuapp.com/messages", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)

@@ -20,12 +20,8 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var audioPlayer: AVAudioPlayer!
     
-    //var nameArray: [String] = []
+    var senderNameArray: [String] = []
     var contentArray: [String] = []
-    
-//    let name = ["ジャスティン", "きゃあ。", "ばなな", "けいちゃん", "べいべー", "パーカー", "みあきち"]
-//    
-//    let content = ["ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!", "ダイバーHappy Birthday!!"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,13 +42,14 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func getReceives() {
 
-        request("https://gentle-everglades-56388.herokuapp.com/messages/receive/1", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
+        request("https://gentle-everglades-56388.herokuapp.com/messages/receive/0", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
             .responseJSON { response in
                 guard let object = response.result.value else {
                     return
                 }
                 let json = JSON(object)
                 json.forEach { (_, json) in
+                    self.senderNameArray.append(json["sender_name"].string!)
                     self.contentArray.append(json["content"].string!)
                 }
                 print(self.contentArray)
@@ -73,7 +70,8 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "Receive") as! CustomTableViewCell
         
         //cell.nameLabel.text = self.nameArray[indexPath.row]
-        cell.contentLabel.text = self.contentArray[indexPath.row]
+        //cell.contentLabel.text = self.contentArray[indexPath.row]
+        cell.setReceive(senderName: senderNameArray[indexPath.row], content: contentArray[indexPath.row])
         
         return cell
     }

@@ -19,9 +19,6 @@ class RecentlyViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var nameArray: [String] = []
     var birthdayArray: [String] = []
-    
-//    let name = ["はるふ", "さくちゃん", "あかさん", "ゆうくん", "りょうさん", "まるさん", "小森さん"]
-//    let birthday = ["2/15", "2/15", "2/15", "2/15", "2/15", "2/15", "2/15"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,8 +59,8 @@ class RecentlyViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Recently") as! CustomTableViewCell
-        cell.nameLabel.text = self.nameArray[indexPath.row]
-        cell.birthdayLabel.text = self.birthdayArray[indexPath.row]
+        
+        cell.setRecentlies(name: nameArray[indexPath.row], birthday: birthdayArray[indexPath.row])
         
         return cell
     }

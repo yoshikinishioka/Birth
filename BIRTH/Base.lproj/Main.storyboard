@@ -50,7 +50,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbI-Ml-mM6">
                                                     <rect key="frame" x="274" y="25" width="81" height="39"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="0.73725490196078436" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" red="0.73725490196078436" green="1" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <state key="normal" title="メッセージ作成"/>
                                                     <connections>
@@ -94,7 +94,7 @@
             </objects>
             <point key="canvasLocation" x="566" y="-144"/>
         </scene>
-        <!--Message-->
+        <!--メッセージ作成-->
         <scene sceneID="N39-B2-J0Q">
             <objects>
                 <viewController id="yjb-tI-YFJ" customClass="MessageViewController" customModule="BIRTH" customModuleProvider="target" sceneMemberID="viewController">
@@ -106,13 +106,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Message" id="Hq2-Ha-iWp">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="C27-uk-ecw">
+                    <navigationItem key="navigationItem" title="メッセージ作成" id="Hq2-Ha-iWp">
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="C27-uk-ecw">
                             <connections>
                                 <action selector="back" destination="yjb-tI-YFJ" id="mck-q3-zBg"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Send" id="y16-lG-Haf">
+                        <barButtonItem key="rightBarButtonItem" title="送信" id="y16-lG-Haf">
                             <connections>
                                 <action selector="send" destination="yjb-tI-YFJ" id="atr-Om-Htf"/>
                             </connections>
@@ -198,6 +198,90 @@
             </objects>
             <point key="canvasLocation" x="566" y="-913"/>
         </scene>
+        <!--Friends-->
+        <scene sceneID="HHT-tn-X5g">
+            <objects>
+                <viewController id="MV3-Dn-NAb" customClass="AddFriendsViewController" customModule="BIRTH" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="27s-Sg-8us"/>
+                        <viewControllerLayoutGuide type="bottom" id="R8w-ug-n7M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="937-Vu-VEh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bZq-mw-Hc8">
+                                <rect key="frame" x="189" y="193" width="145" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dQp-7S-MPF">
+                                <rect key="frame" x="189" y="273" width="145" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rj6-5s-Q1y">
+                                <rect key="frame" x="189" y="356" width="145" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0L-Mu-0jj">
+                                <rect key="frame" x="127" y="464" width="121" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.73725490196078436" green="1" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="追加"/>
+                                <connections>
+                                    <action selector="add" destination="MV3-Dn-NAb" eventType="touchUpInside" id="9bO-QP-SZG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Facebook ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaP-nB-X6y">
+                                <rect key="frame" x="47" y="193" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名前" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfw-Su-kDJ">
+                                <rect key="frame" x="38" y="265" width="131" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="誕生日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvZ-bB-Wma">
+                                <rect key="frame" x="54" y="343" width="98" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="友達を追加しよう。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFs-YT-HHZ">
+                                <rect key="frame" x="59" y="79" width="256" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.73725490199999999" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Friends" image="friends-iloveimg-resized.png" id="qc6-eD-erJ"/>
+                    <connections>
+                        <outlet property="birthday" destination="Rj6-5s-Q1y" id="Idu-Jx-fWG"/>
+                        <outlet property="fb_user_id" destination="bZq-mw-Hc8" id="mE1-y1-gq4"/>
+                        <outlet property="name" destination="dQp-7S-MPF" id="E1i-9J-KDD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OQP-Cp-a9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-650.39999999999998" y="-1417.2413793103449"/>
+        </scene>
         <!--Receive-->
         <scene sceneID="d0V-3r-VcD">
             <objects>
@@ -271,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1D-LE-x63" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-612" y="161"/>
+            <point key="canvasLocation" x="-257" y="242"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="o2H-ze-geQ">
@@ -286,7 +370,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tte-rD-KZ7">
-                                <rect key="frame" x="77" y="308" width="220" height="50"/>
+                                <rect key="frame" x="77" y="445" width="220" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="facebook_login.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -295,6 +379,20 @@
                                     <action selector="login:" destination="rH8-0F-j23" eventType="touchUpInside" id="UF1-2d-8PP"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ここからログイン" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lb-2R-9fs">
+                                <rect key="frame" x="118" y="388" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ようこそ、Birthへ。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xla-Bm-Jba">
+                                <rect key="frame" x="53" y="137" width="268" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.73725490199999999" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
@@ -320,6 +418,7 @@
                         <segue destination="2nE-jq-dpb" kind="relationship" relationship="viewControllers" id="rnY-mC-lUn"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="nkn-Dn-a22"/>
                         <segue destination="sK6-6f-sum" kind="relationship" relationship="viewControllers" id="38F-fX-MPY"/>
+                        <segue destination="MV3-Dn-NAb" kind="relationship" relationship="viewControllers" id="FfV-Um-pZa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgc-ox-Qji" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -347,6 +446,7 @@
     </scenes>
     <resources>
         <image name="facebook_login.png" width="399" height="83"/>
+        <image name="friends-iloveimg-resized.png" width="30" height="30"/>
         <image name="receive-iloveimg-resized.png" width="30" height="30"/>
         <image name="recently-iloveimg-resized.png" width="30" height="30"/>
         <image name="send-iloveimg-resized.png" width="30" height="30"/>

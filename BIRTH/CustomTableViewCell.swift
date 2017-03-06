@@ -24,5 +24,20 @@ class CustomTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setRecentlies(name: String, birthday: String) {
+        nameLabel.text = name
+        birthdayLabel.text = birthday
+    }
+    
+    func setReceive(senderName: String, content: String) {
+        nameLabel.text = senderName
+        contentLabel.text = content
+    }
+    
+    func setSend(receiverName: String, content: String) {
+        nameLabel.text = receiverName
+        contentLabel.text = content
+    }
 
 }
