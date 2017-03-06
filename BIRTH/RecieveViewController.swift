@@ -53,6 +53,7 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
                     self.contentArray.append(json["content"].string!)
                 }
                 print(self.contentArray)
+                self.table.reloadData()
         }
     }
     
@@ -69,8 +70,6 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Receive") as! CustomTableViewCell
         
-        //cell.nameLabel.text = self.nameArray[indexPath.row]
-        //cell.contentLabel.text = self.contentArray[indexPath.row]
         cell.setReceive(senderName: senderNameArray[indexPath.row], content: contentArray[indexPath.row])
         
         return cell

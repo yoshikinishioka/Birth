@@ -33,12 +33,10 @@ class MessageViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func send() {
-        var dict : [String : Any] = [:]
-        
         let parameters = [
-            "content": self.contentField,
-            "sender_id": 1,
-            "receiver_id": 0
+            "content": self.contentField.text,
+            "sender_id": 0,
+            "receiver_id": 1
             ] as [String : Any]
         
         request("https://gentle-everglades-56388.herokuapp.com/messages", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)

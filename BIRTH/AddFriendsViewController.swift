@@ -31,14 +31,13 @@ class AddFriendsViewController: UIViewController {
     }
     
     @IBAction func add() {
-        var dict : [String : Any] = [:]
         
         let parameters = [
             "user_id": 0,
-            "fb_user_id": self.fb_user_id,
-            "name": self.name,
-            "birthday": self.birthday
-            ] as [String : Any]
+            "fb_user_id": self.fb_user_id.text!,
+            "name": self.name.text!,
+            "birthday": self.birthday.text!
+        ] as [String : Any]
         
         request("https://gentle-everglades-56388.herokuapp.com/friends/0", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
         
@@ -50,9 +49,12 @@ class AddFriendsViewController: UIViewController {
                 style:.default,
                 handler: {action in
                     //ボタンが押された時の動作
-                    self.dismiss(animated: true, completion: nil) }
+                    //self.dismiss(animated: true, completion: nil)
+//                    self.fb_user_id.text: nil,
+//                    self.name.text: nil,
+//                    self.birthday.text: nil
+                }
         ) )
-        
         present(alert, animated: true, completion: nil)
     }
     

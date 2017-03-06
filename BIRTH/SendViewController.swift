@@ -44,6 +44,7 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     self.contentArray.append(json["content"].string!)
                 }
                 print(self.contentArray)
+                self.table.reloadData()
         }
     }
 

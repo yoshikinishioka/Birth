@@ -24,7 +24,6 @@ class RecentlyViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         
         table.dataSource = self
-        
         table.delegate = self
         
         getRecentlies()
@@ -44,6 +43,7 @@ class RecentlyViewController: UIViewController, UITableViewDataSource, UITableVi
                     self.birthdayArray.append(json["birthday"].string!)
                 }
                 print(self.nameArray, self.birthdayArray)
+                self.table.reloadData()
         }
     }
 
