@@ -20,19 +20,27 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var audioPlayer: AVAudioPlayer!
     
+    var timer: Timer = Timer()
+    
     var senderNameArray: [String] = []
     var contentArray: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getReceives()
+        timer = Timer.scheduledTimer(
+            timeInterval: 1,
+            target: self,
+            selector: #selector(self.getReceives),
+            userInfo: nil,
+            repeats: true
+        )
         
         table.dataSource = self
         
         table.delegate = self
         
-        let audioPath = URL(fileURLWithPath: Bundle.main.path(forResource: "Happy_Birthday_To_You", ofType: "mp3")!)
+        let audioPath = URL(fileURLWithPath: Bundle.main.path(forResource: "happybirthday", ofType: "mp3")!)
         audioPlayer = try? AVAudioPlayer(contentsOf: audioPath)
         audioPlayer?.play()
         
@@ -49,8 +57,10 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
                 }
                 let json = JSON(object)
                 json.forEach { (_, json) in
+                    if !zip(self.senderNameArray, self.contentArray).contains(where: { $0 == (json["sender_name"].string!, json["content"].string!) }) {
                     self.senderNameArray.append(json["sender_name"].string!)
                     self.contentArray.append(json["content"].string!)
+                    }
                 }
                 print(self.contentArray)
                 self.table.reloadData()
@@ -69,7 +79,6 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Receive") as! CustomTableViewCell
-        
         cell.setReceive(senderName: senderNameArray[indexPath.row], content: contentArray[indexPath.row])
         
         return cell

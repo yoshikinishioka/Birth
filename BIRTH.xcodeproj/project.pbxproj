@@ -30,7 +30,7 @@
 		5DCB4DEA1E6B10B40097EF14 /* receive-iloveimg-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB4DE91E6B10B40097EF14 /* receive-iloveimg-resized.png */; };
 		5DCB4DEC1E6B10BF0097EF14 /* recently-iloveimg-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB4DEB1E6B10BF0097EF14 /* recently-iloveimg-resized.png */; };
 		5DCB4DEE1E6B10C30097EF14 /* send-iloveimg-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB4DED1E6B10C30097EF14 /* send-iloveimg-resized.png */; };
-		5DCB4DF81E6C54CC0097EF14 /* Happy_Birthday_To_You.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB4DF71E6C54CC0097EF14 /* Happy_Birthday_To_You.mp3 */; };
+		5DCB4DF81E6C54CC0097EF14 /* happybirthday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB4DF71E6C54CC0097EF14 /* happybirthday.mp3 */; };
 		5DCB4DFC1E6D91A10097EF14 /* AddFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCB4DFB1E6D91A10097EF14 /* AddFriendsViewController.swift */; };
 		5DCB4DFE1E6D93910097EF14 /* friends-iloveimg-resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCB4DFD1E6D93910097EF14 /* friends-iloveimg-resized.png */; };
 		7563A30F2DE923163A5D0CE8 /* Pods_BIRTH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D71E057E568264DDF9BD13 /* Pods_BIRTH.framework */; };
@@ -87,7 +87,7 @@
 		5DCB4DE91E6B10B40097EF14 /* receive-iloveimg-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "receive-iloveimg-resized.png"; sourceTree = "<group>"; };
 		5DCB4DEB1E6B10BF0097EF14 /* recently-iloveimg-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recently-iloveimg-resized.png"; sourceTree = "<group>"; };
 		5DCB4DED1E6B10C30097EF14 /* send-iloveimg-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send-iloveimg-resized.png"; sourceTree = "<group>"; };
-		5DCB4DF71E6C54CC0097EF14 /* Happy_Birthday_To_You.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Happy_Birthday_To_You.mp3; sourceTree = "<group>"; };
+		5DCB4DF71E6C54CC0097EF14 /* happybirthday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = happybirthday.mp3; sourceTree = "<group>"; };
 		5DCB4DFB1E6D91A10097EF14 /* AddFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendsViewController.swift; sourceTree = "<group>"; };
 		5DCB4DFD1E6D93910097EF14 /* friends-iloveimg-resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friends-iloveimg-resized.png"; sourceTree = "<group>"; };
 		5E02C8F9FA0F58AE0CB9186F /* Pods-BIRTHUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIRTHUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BIRTHUITests/Pods-BIRTHUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 		5DCB4DF21E6C4DA70097EF14 /* music */ = {
 			isa = PBXGroup;
 			children = (
-				5DCB4DF71E6C54CC0097EF14 /* Happy_Birthday_To_You.mp3 */,
+				5DCB4DF71E6C54CC0097EF14 /* happybirthday.mp3 */,
 			);
 			name = music;
 			sourceTree = "<group>";
@@ -356,7 +356,7 @@
 				5DCB4DEC1E6B10BF0097EF14 /* recently-iloveimg-resized.png in Resources */,
 				5D7F8D601E634293009E33E2 /* Main.storyboard in Resources */,
 				5DCB4DEE1E6B10C30097EF14 /* send-iloveimg-resized.png in Resources */,
-				5DCB4DF81E6C54CC0097EF14 /* Happy_Birthday_To_You.mp3 in Resources */,
+				5DCB4DF81E6C54CC0097EF14 /* happybirthday.mp3 in Resources */,
 				5DCB4DEA1E6B10B40097EF14 /* receive-iloveimg-resized.png in Resources */,
 				5D7F8D911E64804A009E33E2 /* facebook_login.png in Resources */,
 				5DCB4DFE1E6D93910097EF14 /* friends-iloveimg-resized.png in Resources */,

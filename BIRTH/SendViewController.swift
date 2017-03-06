@@ -17,13 +17,21 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet var table: UITableView!
     
+    var timer: Timer = Timer()
+    
     var receiverNameArray: [String] = []
     var contentArray: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getSends()
+        timer = Timer.scheduledTimer(
+            timeInterval: 1,
+            target: self,
+            selector: #selector(self.getSends),
+            userInfo: nil,
+            repeats: true
+        )
         
         table.dataSource = self
         
@@ -40,8 +48,10 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
                 let json = JSON(object)
                 json.forEach { (_, json) in
+                    if !zip(self.receiverNameArray, self.contentArray).contains(where: { $0 == (json["receiver_name"].string!, json["content"].string!) }) {
                     self.receiverNameArray.append(json["receiver_name"].string!)
                     self.contentArray.append(json["content"].string!)
+                    }
                 }
                 print(self.contentArray)
                 self.table.reloadData()

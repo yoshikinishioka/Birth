@@ -17,6 +17,8 @@ class RecentlyViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet var table: UITableView!
     
+    var timer: Timer = Timer()
+    
     var nameArray: [String] = []
     var birthdayArray: [String] = []
 
@@ -26,7 +28,13 @@ class RecentlyViewController: UIViewController, UITableViewDataSource, UITableVi
         table.dataSource = self
         table.delegate = self
         
-        getRecentlies()
+        timer = Timer.scheduledTimer(
+            timeInterval: 1,
+            target: self,
+            selector: #selector(self.getRecentlies),
+            userInfo: nil,
+            repeats: true
+        )
         
         // Do any additional setup after loading the view.
     }
@@ -39,10 +47,12 @@ class RecentlyViewController: UIViewController, UITableViewDataSource, UITableVi
                 }
                 let json = JSON(object)
                 json.forEach { (_, json) in
+                    if !zip(self.nameArray, self.birthdayArray).contains(where: { $0 == (json["name"].string!, json["birthday"].string!) })  {
                     self.nameArray.append(json["name"].string!)
                     self.birthdayArray.append(json["birthday"].string!)
+                    }
                 }
-                print(self.nameArray, self.birthdayArray)
+                //print(self.nameArray, self.birthdayArray)
                 self.table.reloadData()
         }
     }
