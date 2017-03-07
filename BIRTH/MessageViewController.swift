@@ -34,7 +34,7 @@ class MessageViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func send() {
         let parameters = [
-            "content": contentField.text,
+            "content": self.contentField.text!,
             "sender_id": 0,
             "receiver_id": 1
             ] as [String : Any]
@@ -51,7 +51,6 @@ class MessageViewController: UIViewController, UITextFieldDelegate {
                     //ボタンが押された時の動作
                     self.dismiss(animated: true, completion: nil) }
         ) )
-        
         present(alert, animated: true, completion: nil)
     }
     

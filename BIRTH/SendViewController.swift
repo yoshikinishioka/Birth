@@ -26,7 +26,7 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         
         timer = Timer.scheduledTimer(
-            timeInterval: 1,
+            timeInterval: 0.1,
             target: self,
             selector: #selector(self.getSends),
             userInfo: nil,
@@ -53,7 +53,7 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     self.contentArray.append(json["content"].string!)
                     }
                 }
-                print(self.contentArray)
+                //print(self.contentArray)
                 self.table.reloadData()
         }
     }
@@ -72,7 +72,7 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Send") as! CustomTableViewCell
         
-        cell.setSend(receiverName: receiverNameArray[indexPath.row], content: contentArray[indexPath.row])
+        cell.setSend(receiverName: receiverNameArray[indexPath.row]+"さんへのお祝いです。", content: contentArray[indexPath.row])
         
         return cell
     }

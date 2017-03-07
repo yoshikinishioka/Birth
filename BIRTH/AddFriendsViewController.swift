@@ -49,7 +49,6 @@ class AddFriendsViewController: UIViewController {
                 style:.default,
                 handler: {action in
                     //ボタンが押された時の動作
-                    //self.dismiss(animated: true, completion: nil)
 //                    self.fb_user_id.text: nil,
 //                    self.name.text: nil,
 //                    self.birthday.text: nil

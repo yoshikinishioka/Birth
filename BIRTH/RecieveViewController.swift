@@ -29,7 +29,7 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         
         timer = Timer.scheduledTimer(
-            timeInterval: 1,
+            timeInterval: 0.1,
             target: self,
             selector: #selector(self.getReceives),
             userInfo: nil,
@@ -62,7 +62,7 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
                     self.contentArray.append(json["content"].string!)
                     }
                 }
-                print(self.contentArray)
+                //print(self.contentArray)
                 self.table.reloadData()
         }
     }
@@ -79,7 +79,7 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Receive") as! CustomTableViewCell
-        cell.setReceive(senderName: senderNameArray[indexPath.row], content: contentArray[indexPath.row])
+        cell.setReceive(senderName: senderNameArray[indexPath.row]+"さんからのお祝いです。", content: contentArray[indexPath.row])
         
         return cell
     }

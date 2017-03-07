@@ -312,6 +312,7 @@
 				TargetAttributes = {
 					5D7F8D561E634293009E33E2 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = E57RMK7VE5;
 						ProvisioningStyle = Automatic;
 					};
 					5D7F8D6A1E634294009E33E2 = {
@@ -686,6 +687,8 @@
 			baseConfigurationReference = FE03820F34503BF381CAAFF0 /* Pods-BIRTH.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = E57RMK7VE5;
 				INFOPLIST_FILE = BIRTH/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.litech.BIRTH;
@@ -699,6 +702,8 @@
 			baseConfigurationReference = 37CF32CE30DE774933B72D90 /* Pods-BIRTH.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = E57RMK7VE5;
 				INFOPLIST_FILE = BIRTH/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.litech.BIRTH;

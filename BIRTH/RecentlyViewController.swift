@@ -29,7 +29,7 @@ class RecentlyViewController: UIViewController, UITableViewDataSource, UITableVi
         table.delegate = self
         
         timer = Timer.scheduledTimer(
-            timeInterval: 1,
+            timeInterval: 0.1,
             target: self,
             selector: #selector(self.getRecentlies),
             userInfo: nil,
