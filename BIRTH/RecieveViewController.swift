@@ -50,7 +50,7 @@ class RecieveViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func getReceives() {
 
-        request("https://gentle-everglades-56388.herokuapp.com/messages/receive/0", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
+        request("https://birthdatabase.herokuapp.com/messages/receive/0", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
             .responseJSON { response in
                 guard let object = response.result.value else {
                     return

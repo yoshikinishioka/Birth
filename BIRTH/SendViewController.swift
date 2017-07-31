@@ -41,7 +41,7 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func getSends() {
-        request("https://gentle-everglades-56388.herokuapp.com/messages/send/0", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
+        request("https://birthdatabase.herokuapp.com/messages/send/0", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
             .responseJSON { response in
                 guard let object = response.result.value else {
                     return

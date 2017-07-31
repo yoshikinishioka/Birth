@@ -39,7 +39,7 @@ class AddFriendsViewController: UIViewController {
             "birthday": self.birthday.text!
         ] as [String : Any]
         
-        request("https://gentle-everglades-56388.herokuapp.com/friends/0", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
+        request("https://birthdatabase.herokuapp.com/friends/0", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
         
         let alert:UIAlertController = UIAlertController(title: "追加", message: "友達が追加されました！", preferredStyle: .alert)
         

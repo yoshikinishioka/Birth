@@ -39,7 +39,7 @@ class MessageViewController: UIViewController, UITextFieldDelegate {
             "receiver_id": 1
             ] as [String : Any]
         
-        request("https://gentle-everglades-56388.herokuapp.com/messages", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
+        request("https://birthdatabase.herokuapp.com/messages", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
         
         let alert:UIAlertController = UIAlertController(title: "送信", message: "誕生日メッセージが送信されました！", preferredStyle: .alert)
         

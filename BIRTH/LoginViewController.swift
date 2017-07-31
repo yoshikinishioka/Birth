@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
             "birthday": Date(),
             "name": "yoshiki"
         ] as [String : Any]
-        request("https://gentle-everglades-56388.herokuapp.com/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
+        request("https://birthdatabase.herokuapp.com/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
         
         //AppManager.manager.user = dict
     }
@@ -71,7 +71,7 @@ class LoginViewController: UIViewController {
 //                    "birthday": self.dict["birthday"],
                     "name": self.dict["name"]
                 ]
-                request("https://gentle-everglades-56388.herokuapp.com/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
+                request("https://birthdatabase.herokuapp.com/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
                 
 //                self.getFBFriendsData()
 //                let parameters2 = [
@@ -79,7 +79,7 @@ class LoginViewController: UIViewController {
 //                    "birthday": dict2["birthday"],
 //                    "name": dict2["name"]
 //                ]
-//                Alamofire.request(.POST, "https://gentle-everglades-56388.herokuapp.com/register_friends", parameters2: parameters)
+//                Alamofire.request(.POST, "https://birthdatabase.herokuapp.com/register_friends", parameters2: parameters)
 //                self.friendsList()
                 
             case let .failed(error):
